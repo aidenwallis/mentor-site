@@ -1,0 +1,158 @@
+* {
+	-webkit-font-smoothing:antialiased;
+	box-sizing:border-box;
+}
+
+body {
+	font-family:'Open Sans', sans-serif;
+	width:100vw;
+	height:100vh;
+	justify-content:center;
+	align-items:center;
+	display:flex;
+	overflow:hidden;
+	background:#000;
+}
+
+a {
+	opacity:.65;
+	color:#FFF;
+	text-decoration:none;
+	transition:opacity .3s ease;
+	&:hover {
+		opacity:1;
+	}
+}
+
+.clearfix {
+	*zoom:1;
+	&:before, &:after {
+		content:' ';
+		line-height:0;
+		display:table;
+	} &:after {
+		clear:both;
+	}
+}
+
+#flex {
+	margin:auto;
+	max-width:470px;
+	padding:20px;
+	width:100%;
+	position:relative;
+	z-index:2;
+	color:#FFF;
+}
+h1 {
+	display:block;
+	margin:0;
+	margin-top:10px;
+	font-weight:600;
+}
+h3 {
+	font-weight:300;
+	margin:0;
+	margin-top:5px;
+}
+
+p {
+	line-height:1.4;
+	text-align:center;
+}
+
+#socialLinks {
+	margin:0;
+	margin-top:20px;
+	padding:0;
+	li {
+		display:inline-block;
+		float:left;
+		list-style:none;
+		a {
+			font-size:2rem;
+			color:#FFF;
+			margin-right:30px;
+			transition:opacity .3s ease;
+		} &:last-child a {
+			margin-right:0;
+		}
+	}
+}
+
+#player {
+	position:absolute;
+	z-index:1;
+	// left:50%;
+	// top:50%;
+	pointer-events:none;
+	opacity:.65;
+}
+
+#card {
+	display:table;
+	text-transform:uppercase;
+}
+
+#image {
+	width:150px;
+	height:150px;
+	display:block;
+	margin:0 auto;
+	border-radius:50%;
+	box-shadow:0 5px 15px rgba(0, 0, 0, .3);
+	background-size:cover;
+	background-position:center;
+	float:left;
+	position:relative;
+}
+
+#details {
+	float:left;
+	position:relative;
+	padding-left:25px;
+	padding-top:7px;
+}
+
+#text {
+	margin-top:35px;
+}
+
+@media (max-width:450px) {
+	#image, #details {
+		float:none;
+		clear:both;
+		padding-left:0;
+		margin:0 auto;
+	} #details {
+		margin-top:15px;
+	} #card {
+		display:block;
+		text-align:center;
+	} #socialLinks {
+		display:table;
+		margin:20px auto;
+	} #text {
+		margin-top:15px;
+	}
+}
+
+@media handheld {
+	#player {
+		display:none;
+	}
+	body {
+		background:url(http://img.youtube.com/vi/OKEz-NVw0-k/maxresdefault.jpg) no-repeat center center;
+		background-size:cover;
+		&:before {
+			content:' ';
+			width:100%;
+			height:100%;
+			left:0;
+			top:0;
+			position:absolute;
+			background:#000;
+			opacity:.45;
+		}
+	}
+}
