@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -24,98 +24,20 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" type="text/css">
-	<link href="/assets/styles/main.min.css" rel="stylesheet" type="text/css">
+	<link href="/main.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div id="flex" class="animated fadeInUp">
-		<div id="card">
-			<div id="image" style="background-image:url(/assets/images/mentorz.jpg)"></div>
-			<div id="details" class="clearfix">
-				<h1>Mentor - VFX Artist</h1>
-				<h3>Asker Ramzaev</h3>
-				<ul id="socialLinks">
-					<li><a href="https://twitter.com/Mentorz" target="_blank"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="https://www.youtube.com/MentorEdits?sub_confirmation=1"><i class="fa fa-youtube"></i></a></li>
-					<li><a href="https://twitch.tv/MentorEdits" target="_blank"><i class="fa fa-twitch"></i></a></li>
-					<li><a href="https://sellfy.com/RedMentor" target="_blank"><i class="fa fa-shopping-basket"></i></a></li>
-				</ul>
-			</div>
-		</div>
-		<div id="text">
-			<p>For any enquiries, please contact me via email at <a href="mailto:mentoreditsbusiness@hotmail.com">mentoreditsbusiness@hotmail.com</a></p>
-			<p><small><a href="/">BACKGROUND VIDEO EDITED BY MENTORVFX.</a></small></p>
-			<p><small><a href="https://twitter.com/WallisWeb" target="_blank">CREATED BY AIDEN WALLIS</a></small></p>
-		</div>
+	<div id="container" class="animated fadeInUp">
+		<img src="/mentorz.jpg" alt="Mentor picture" width="125">
+		<h1>Mentor - VFX artist</h1>
+		<h2>Asker Ramazev</h2>
+		<p class="desc">For any enquiries, please contact me via email at <a href="mailto:mentoreditsbusiness@hotmail.com" class="contact">mentoreditsbusiness@hotmail.com</a></p>
+		<p class="links">
+			<a href="https://twitter.com/Mentorz"><i class="fa fa-twitter"></i></a>
+			<a href="https://youtube.com/MentorEdits?sub_confirmation=1"><i class="fa fa-youtube"></i></a>
+			<a href="https://twitch.tv/MentorEdits"><i class="fa fa-twitch"></i></a>
+			<a href="https://sellfy.com/RedMentor"><i class="fa fa-shopping-basket"></i></a>
+		</p>
 	</div>
-	<div id="player"></div>
-	<script type="text/javascript">
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-		var player;
-		function onYouTubeIframeAPIReady() {
-			player = new YT.Player('player', {
-				height: '480',
-				width: '640',
-				videoId: 'OKEz-NVw0-k',
-				events: {
-				'onReady': onPlayerReady,
-				'onStateChange': onPlayerStateChange
-				},
-				playerVars: {
-					modestbranding: 3,
-					loop: 1,
-					controls: 0,
-					showinfo: 0,
-					autoplay: 1,
-					iv_load_policy: 3,
-					start: 10
-				}
-			});
-		}
-
-		// 4. The API will call this function when the video player is ready.
-		function onPlayerReady(e) {
-			e.target.playVideo();
-			player.mute();
-			resize();
-		}
-
-		window.onresize = resize;
-
-		// 5. The API calls this function when the player's state changes.
-		//    The function indicates that when playing a video (state=1),
-		//    the player should play for six seconds and then stop.
-		var done = false;
-		function onPlayerStateChange(e) {
-			if (e.data === YT.PlayerState.ENDED) {
-		            player.seekTo(10);
-		    }
-		}
-		function stopVideo() {
-			player.stopVideo();
-		}
-		function resize() {
-			var playe = document.getElementById('player'),
-			width = window.innerWidth,
-			height = window.innerHeight,
-			calcH = height * (16 / 9),
-			calcW = width * (9 / 16),
-			mL = ((width - calcH) / 2)+'px',
-			mT = ((height - calcW) / 2)+'px';
-			if(width < calcH){
-				playe.style.width = calcH+'px';
-				playe.style.height = height+'px';
-				// playe.style.marginLeft = mL;
-				// playe.style.marginTop = '0px';
-			} else {
-				playe.style.width = width+'px';
-				playe.style.height = calcW+'px';
-				// playe.style.marginTop = mT;
-				// playe.style.marginLeft = '0px';
-			}   
-		}
-	</script>
 </body>
 </html>
